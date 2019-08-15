@@ -41,35 +41,29 @@
   <input value="走你！Go~" type="submit" class="btn btn-default">
 </form>
 ${requestScope.roomHeader}
-<div class="room-player-main" id="J_playerMain">
-  <div class="room-player-gift-placeholder"></div>
-  <div class="room-player-layer" id="J_roomPlayerLayer"></div>
-  <div class="room-player" id="liveRoomObj"></div>
-</div>
-${requestScope.roomRight}
-${requestScope.jsCode}
-<%--<div id="mse"></div>--%>
-<%--<script src="//cdn.jsdelivr.net/npm/xgplayer@1.1.4/browser/index.js" charset="utf-8"></script>--%>
-<%--<script src="//cdn.jsdelivr.net/npm/xgplayer-flv.js/browser/index.js" charset="utf-8"></script><script>--%>
-<%--  let player = new FlvJsPlayer({--%>
-<%--    "id": "mse",--%>
-<%--    "url": "${requestScope.urls[0][1]}",--%>
-<%--    "playsinline": true,--%>
-<%--    "whitelist": [--%>
-<%--      ""--%>
-<%--    ],--%>
-<%--    "width": "1000",--%>
-<%--    "height": "565",--%>
-<%--    "autoplay": true--%>
-<%--  });--%>
-<%--  player.emit('resourceReady', [--%>
-<%--    {"name":"${requestScope.urls[0][0]}","url":"${requestScope.urls[0][1]}"}--%>
-<%--  ,{"name":"${requestScope.urls[1][0]}","url":"${requestScope.urls[1][1]}"}--%>
-<%--  ,{"name":"${requestScope.urls[2][0]}","url":"${requestScope.urls[2][1]}"}--%>
-<%--  ,{"name":"${requestScope.urls[3][0]}","url":"${requestScope.urls[3][1]}"}--%>
-<%--  ,{"name":"${requestScope.urls[4][0]}","url":"${requestScope.urls[4][1]}"}--%>
-<%--  ]);--%>
-<%--</script>--%>
+
+<div id="mse"></div>
+<script src="//cdn.jsdelivr.net/npm/xgplayer@1.1.4/browser/index.js" charset="utf-8"></script>
+<script src="//cdn.jsdelivr.net/npm/xgplayer-flv.js/browser/index.js" charset="utf-8"></script><script>
+  let player = new FlvJsPlayer({
+    "id": "mse",
+    "url": "${requestScope.urls[0][1]}",
+    "playsinline": true,
+    "whitelist": [
+      ""
+    ],
+    "width": "1000",
+    "height": "565",
+    "autoplay": true
+  });
+  player.emit('resourceReady', [
+    {"name":"${requestScope.urls[0][0]}","url":"${requestScope.urls[0][1]}"}
+  ,{"name":"${requestScope.urls[1][0]}","url":"${requestScope.urls[1][1]}"}
+  ,{"name":"${requestScope.urls[2][0]}","url":"${requestScope.urls[2][1]}"}
+  ,{"name":"${requestScope.urls[3][0]}","url":"${requestScope.urls[3][1]}"}
+  ,{"name":"${requestScope.urls[4][0]}","url":"${requestScope.urls[4][1]}"}
+  ]);
+</script>
 
 </body>
 </html>
